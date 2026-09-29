@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shreyansh Sakarwal | Data science, ML and full-stack</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#051820;--surf:#0b2a36;--line:#1b4453;--tx:#dcebea;--mut:#8fadb1;--acc:#f2b35a;--tea:#3fc1c9;--on-acc:#1a1204;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f1f6f5;--surf:#e2edec;--line:#bcd3d3;--tx:#0d2630;--mut:#4b6b70;--acc:#a85f00;--tea:#0a7f88;--on-acc:#fff}}
+:root[data-theme="light"]{--bg:#f1f6f5;--surf:#e2edec;--line:#bcd3d3;--tx:#0d2630;--mut:#4b6b70;--acc:#a85f00;--tea:#0a7f88;--on-acc:#fff}
+:root[data-theme="dark"]{--bg:#051820;--surf:#0b2a36;--line:#1b4453;--tx:#dcebea;--mut:#8fadb1;--acc:#f2b35a;--tea:#3fc1c9;--on-acc:#1a1204}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 17px/1.65 "IBM Plex Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.05;margin:0;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;gap:12px}
+.nav b{font:800 18px "Bricolage Grotesque",sans-serif}
+.nav nav{display:flex;gap:20px;align-items:center;font-size:15px}
+.nav nav a{text-decoration:none;color:var(--mut)}.nav nav a:hover{color:var(--tx)}
+#theme{background:none;border:1px solid var(--line);color:var(--tx);border-radius:99px;padding:4px 12px;font:inherit;font-size:14px;cursor:pointer}
+@media(max-width:640px){.nav nav a.h{display:none}}
+.hero{position:relative;background:#051820;color:#dcebea;overflow:hidden;min-height:78vh;display:flex;align-items:flex-end}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:crosshair}
+.hero .wrap{position:relative;padding-top:120px;padding-bottom:56px;pointer-events:none;width:100%}
+.hero h1{font-size:clamp(46px,10vw,124px);font-weight:800}
+.hero p.lead{font-size:clamp(18px,2.4vw,24px);max-width:34ch;margin:18px 0 26px;color:#c3dadb}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;pointer-events:auto}
+.btn{display:inline-block;padding:12px 22px;border-radius:99px;text-decoration:none;font-weight:500;border:1px solid transparent}
+.btn.p{background:#f2b35a;color:#1a1204}.btn.p:hover{background:#ffc677}
+.btn.s{border-color:#3d6675;color:#dcebea;background:rgba(5,24,32,.55)}.btn.s:hover{border-color:#dcebea}
+.hint{position:absolute;right:24px;top:18px;font-size:13px;color:#8fadb1;text-align:right;max-width:24ch;pointer-events:none}
+section{padding:96px 0 0}
+h2{font-size:clamp(30px,5vw,52px);margin-bottom:28px}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:start}
+@media(max-width:760px){.about{grid-template-columns:1fr}}
+.about p{margin:0 0 16px;max-width:60ch}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.stats div{background:var(--surf);padding:20px}
+.stats strong{display:block;font:800 34px "Bricolage Grotesque",sans-serif;color:var(--acc)}
+.stats span{font-size:14px;color:var(--mut)}
+.job{border-left:2px solid var(--tea);padding-left:24px;margin-left:4px}
+.job h3{font-size:26px}.job .meta{color:var(--mut);margin:4px 0 16px}
+.job ul{padding-left:18px;margin:0}.job li{margin-bottom:10px;max-width:70ch}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.tags span{font-size:13.5px;padding:3px 12px;border:1px solid var(--line);border-radius:99px;color:var(--mut)}
+.lab{margin-top:44px;background:var(--surf);border:1px solid var(--line);border-radius:20px;padding:28px}
+.lab h3{font-size:24px;margin-bottom:6px}.lab p{margin:0 0 18px;color:var(--mut);max-width:62ch}
+.opts{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+.opts button{font:inherit;font-size:15px;background:transparent;color:var(--tx);border:1px solid var(--line);border-radius:12px;padding:9px 16px;cursor:pointer}
+.opts button[aria-pressed="true"]{background:var(--acc);color:var(--on-acc);border-color:var(--acc)}
+#rank{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+#rank li{display:grid;grid-template-columns:150px 1fr 44px;gap:12px;align-items:center;font-size:15px}
+#rank i{display:block;height:10px;border-radius:9px;background:var(--tea);width:0;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+#rank li:first-child i{background:var(--acc)}
+#why{margin-top:16px;font-size:15px;color:var(--mut);min-height:3em}
+@media(max-width:520px){#rank li{grid-template-columns:110px 1fr 38px}}
+.proj{border-top:1px solid var(--line)}
+.proj:last-child{border-bottom:1px solid var(--line)}
+.proj button{all:unset;box-sizing:border-box;width:100%;display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:26px 4px;cursor:pointer}
+.proj button:focus-visible{outline:2px solid var(--acc)}
+.proj h3{font-size:clamp(24px,4vw,38px);transition:color .2s,transform .3s}
+.proj button:hover h3{color:var(--acc);transform:translateX(8px)}
+.proj .stack{color:var(--mut);font-size:14.5px;text-align:right;max-width:32ch}
+.proj .body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s ease}
+.proj.open .body{grid-template-rows:1fr}
+.proj .body>div{overflow:hidden}
+.proj .body p{margin:0 4px 26px;max-width:66ch;color:var(--mut)}
+.proj .body p b{color:var(--tx);font-weight:500}
+@media(max-width:640px){.proj button{flex-direction:column;gap:4px}.proj .stack{text-align:left}}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px}
+.skills h3{font-size:19px;margin-bottom:10px;color:var(--tea)}
+.skills p{margin:0;color:var(--mut);font-size:15.5px}
+.contact{padding-bottom:96px}
+.contact h2{font-size:clamp(40px,8vw,96px);max-width:14ch}
+.links{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.links .btn.s{border-color:var(--line);color:var(--tx);background:transparent}.links .btn.s:hover{border-color:var(--tx)}
+.links .btn.p{background:var(--acc);color:var(--on-acc)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--mut);font-size:14px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap"><b>Shreyansh S.</b>
+<nav aria-label="Sections"><a class="h" href="#about">About</a><a class="h" href="#work">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a><button id="theme" aria-label="Toggle light and dark theme">Theme</button></nav></div></header>
+
+<main>
+<div class="hero">
+<canvas id="spec" aria-label="Live spectrogram of moving vessel signals. Move the cursor to add a signal, click to ping."></canvas>
+<div class="hint">This is a live spectrogram. Move your cursor across it, click to ping.</div>
+<div class="wrap">
+<h1>Shreyansh<br>Sakarwal</h1>
+<p class="lead">I build systems that listen: signal processing, machine learning and full-stack products.</p>
+<div class="cta"><a class="btn p" href="#projects">See my work</a><a class="btn s" href="mailto:shreyanshsakarwal512@gmail.com">Email me</a></div>
+</div></div>
+
+<section id="about"><div class="wrap about">
+<div><h2>Data science student who ships</h2>
+<p>I'm a B.Tech Data Science student at Heritage Institute of Technology, Kolkata. I like problems where raw data is messy and the answer has to be trustworthy, from underwater audio to student answer sheets.</p>
+<p>This year I worked at NTRO in New Delhi, building a full-stack simulator for analysing ocean acoustics, and my tooling was used to benchmark national AI challenge submissions.</p></div>
+<div class="stats"><div><strong>8.8</strong><span>CGPA out of 10</span></div><div><strong>SIH '24</strong><span>National finalist</span></div><div><strong>4</strong><span>Noise filters ranked automatically</span></div><div><strong>NTRO</strong><span>Software development intern</span></div></div>
+</div></section>
+
+<section id="work"><div class="wrap">
+<h2>Experience</h2>
+<div class="job"><h3>Software development intern, NTRO</h3>
+<div class="meta">National Technical Research Organisation, New Delhi. Jan to Apr 2026</div>
+<ul>
+<li>Designed and built the <b>Oceanic Acoustic Simulator</b>, a full-stack web app for analysing underwater audio, with real-time vessel pattern recognition and anomaly detection.</li>
+<li>Built audio pipelines with spectral analysis (STFT, MFCC, CQT), noise reduction and automated feature extraction feeding classification models.</li>
+<li>Replaced manual algorithm choice with a rule-based recommender that ranks Notch, Wiener, Bandpass and Spectral Subtraction filters by signal characteristics.</li>
+<li>Made an evaluation suite (F1, precision, recall, leaderboard) and a synthetic dataset generator, adopted to benchmark submissions to the PS-12 AI Grand Challenge.</li></ul>
+<div class="tags"><span>Python</span><span>React.js</span><span>FastAPI</span><span>Node.js</span><span>NumPy</span><span>SciPy</span><span>Librosa</span><span>Linux</span></div></div>
+
+<div class="lab"><h3>Try the filter picker</h3>
+<p>A simplified take on the idea behind the recommender. Pick what the noise looks like and see which filter would rank first.</p>
+<div class="opts" id="opts" role="group" aria-label="Noise type"></div>
+<ul id="rank"></ul><div id="why" aria-live="polite"></div></div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+<h2>Projects</h2>
+<div class="proj open"><button aria-expanded="true"><h3>NotesGPT</h3><span class="stack">Python, LangChain, ChromaDB, Gemini, Streamlit</span></button>
+<div class="body"><div><p>Ask questions about your PDF notes and get answers you can check. The RAG pipeline chunks and embeds notes locally, retrieves context by vector similarity and generates answers with Gemini. <b>Every answer traces back to its exact source chunk and page</b>, extending the answer-highlighting idea from my earlier AI grading project, VedaAI.</p></div></div></div>
+<div class="proj"><button aria-expanded="false"><h3>Disaster Tweet Classifier</h3><span class="stack">XGBoost, Scikit-learn, TF-IDF, Streamlit</span></button>
+<div class="body"><div><p>An end-to-end NLP pipeline that tells real disaster tweets from noise on a large, imbalanced dataset. Tokenisation, lemmatisation and TF-IDF features feed four benchmarked models (XGBoost, SVM, Naive Bayes, KNN) with cross-validation and tuning, reaching <b>78% accuracy</b>. Deployed as an interactive Streamlit demo.</p></div></div></div>
+<div class="proj"><button aria-expanded="false"><h3>RentQuest</h3><span class="stack">React.js, Node.js, Razorpay</span></button>
+<div class="body"><div><p>A responsive, mobile-first rental platform with location-based search, dynamic listings and reviews. <b>Razorpay is integrated end to end</b>, so a renter goes from finding a property to paying for the booking in one flow.</p></div></div></div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+<h2>Toolbox</h2>
+<div class="skills">
+<div><h3>Languages</h3><p>Python, R, JavaScript, SQL, HTML5, CSS3</p></div>
+<div><h3>Web</h3><p>React.js, Node.js, Express.js, FastAPI, Streamlit, REST API design</p></div>
+<div><h3>Data and ML</h3><p>Pandas, NumPy, Scikit-learn, XGBoost, TensorFlow, SciPy, Librosa, Matplotlib, Seaborn</p></div>
+<div><h3>AI and RAG</h3><p>LangChain, ChromaDB, vector search, Sentence-Transformers, Gemini API, prompt engineering</p></div>
+<div><h3>Tools</h3><p>Git, Linux, MySQL, MongoDB, Razorpay</p></div>
+</div></div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+<h2>Have something worth building?</h2>
+<div class="links"><a class="btn p" href="mailto:shreyanshsakarwal512@gmail.com">shreyanshsakarwal512@gmail.com</a>
+<a class="btn s" href="https://github.com/deBurglar" target="_blank" rel="noopener">GitHub</a>
+<a class="btn s" href="https://www.linkedin.com/in/shreyansh-sakarwal-7a26a2323" target="_blank" rel="noopener">LinkedIn</a></div>
+</div></section>
+</main>
+<footer><div class="wrap">Shreyansh Sakarwal, Kolkata, India</div></footer>
+
+<script>
+(function(){
+var root=document.documentElement,tb=document.getElementById('theme');
+try{var t=localStorage.getItem('theme');if(t)root.setAttribute('data-theme',t)}catch(e){}
+tb.onclick=function(){var dark=root.getAttribute('data-theme')?root.getAttribute('data-theme')==='dark':!matchMedia('(prefers-color-scheme:light)').matches;var n=dark?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}};
+
+document.querySelectorAll('.proj button').forEach(function(b){b.onclick=function(){var p=b.parentNode,o=p.classList.toggle('open');b.setAttribute('aria-expanded',o)}});
+
+var F=['Notch','Wiener','Bandpass','Spectral subtraction'];
+var N=[
+{n:'Steady hum',s:[95,40,50,60],w:'A narrow, constant tone (like mains hum) sits at one frequency, so a notch removes it with almost no damage to the rest.'},
+{n:'Broadband hiss',s:[20,92,35,70],w:'Noise spread across all frequencies is best handled statistically, which is what a Wiener filter does.'},
+{n:'Out-of-band rumble',s:[30,45,94,40],w:'When the noise lives far from the band you care about, a bandpass filter simply cuts the rest away.'},
+{n:'Stationary background',s:[35,60,40,93],w:'If the noise stays the same over time, you can estimate it during quiet moments and subtract it.'}];
+var o=document.getElementById('opts'),r=document.getElementById('rank'),w=document.getElementById('why');
+N.forEach(function(x,i){var b=document.createElement('button');b.textContent=x.n;b.setAttribute('aria-pressed','false');b.onclick=function(){pick(i)};o.appendChild(b)});
+function pick(i){
+ [].forEach.call(o.children,function(b,j){b.setAttribute('aria-pressed',i===j)});
+ var x=N[i],a=F.map(function(f,k){return{f:f,v:x.s[k]}}).sort(function(p,q){return q.v-p.v});
+ r.innerHTML='';a.forEach(function(e){var li=document.createElement('li');li.innerHTML='<span>'+e.f+'</span><i></i><span>'+e.v+'</span>';r.appendChild(li);var bar=li.querySelector('i');requestAnimationFrame(function(){requestAnimationFrame(function(){bar.style.width=e.v+'%'})})});
+ w.textContent=x.w}
+pick(0);
+
+var c=document.getElementById('spec'),g=c.getContext('2d'),W,H,mx=-1,my=-1,mt=0,flash=0,tick=0;
+var tracks=[{f:.25,d:.00006,a:.7,p:0},{f:.5,d:-.00004,a:.55,p:2},{f:.72,d:.00003,a:.8,p:4},{f:.38,d:-.00005,a:.4,p:1}];
+function size(){var b=c.getBoundingClientRect();W=c.width=Math.max(300,b.width|0);H=c.height=Math.max(300,b.height|0);g.fillStyle='#051820';g.fillRect(0,0,W,H)}
+function col(v){v=Math.min(1,v);var r,gg,b;if(v<.5){var k=v*2;r=5+k*10;gg=24+k*100;b=32+k*90}else{var k=(v-.5)*2;r=15+k*227;gg=124+k*55;b=122-k*30}return'rgb('+(r|0)+','+(gg|0)+','+(b|0)+')'}
+function step(){
+ tick++;g.drawImage(c,-2,0);
+ var x=W-2,now=performance.now();
+ for(var y=0;y<H;y+=3){
+  var f=1-y/H,v=Math.random()*.16+.04;
+  for(var i=0;i<tracks.length;i++){var t=tracks[i],tf=t.f+Math.sin(tick*t.d*40+t.p)*.05,d=(f-tf)/.008;v+=t.a*Math.exp(-d*d)*(.7+.3*Math.sin(tick*.05+i))}
+  if(now-mt<1500&&my>=0){var dy=(y-my)/26;v+=.75*Math.exp(-dy*dy)*(1-(now-mt)/1500)}
+  if(flash>0)v+=flash/10;
+  g.fillStyle=col(v);g.fillRect(x,y,2,3)}
+ if(flash>0)flash--;
+}
+size();
+var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(reduce){for(var k=0;k<W/2;k++)step()}else{(function loop(){step();requestAnimationFrame(loop)})()}
+addEventListener('resize',function(){size()});
+c.addEventListener('pointermove',function(e){var b=c.getBoundingClientRect();my=e.clientY-b.top;mt=performance.now()});
+c.addEventListener('pointerdown',function(){flash=9});
+})();
+</script>
+</body>
+</html>
